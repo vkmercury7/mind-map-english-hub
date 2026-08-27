@@ -28,12 +28,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { StickyCta } from "@/components/landing/StickyCta";
 
 import heroDevices from "@/assets/hero-devices.jpg";
-import mapToBe from "@/assets/map-tobe.jpg";
-import mapPresent from "@/assets/map-present.jpg";
-import mapPhrasal from "@/assets/map-phrasal.jpg";
-import mapTravel from "@/assets/map-travel.jpg";
-import mapPrepositions from "@/assets/map-prepositions.jpg";
-import mapExpressions from "@/assets/map-expressions.jpg";
+import { MapPoster, type MapData } from "@/components/landing/MapPoster";
 import useTablet from "@/assets/use-tablet.jpg";
 import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
@@ -74,13 +69,253 @@ const heroPills = [
   "Ideal para aprender e revisar",
 ];
 
-const mapas = [
-  { src: mapToBe, tema: "Verb To Be", nivel: "A1" },
-  { src: mapPresent, tema: "Simple Present", nivel: "A1" },
-  { src: mapPhrasal, tema: "Phrasal Verbs", nivel: "B1" },
-  { src: mapPrepositions, tema: "Prepositions", nivel: "A2" },
-  { src: mapTravel, tema: "Travel English", nivel: "A2" },
-  { src: mapExpressions, tema: "Everyday Expressions", nivel: "B1" },
+const mapas: { tema: string; nivel: string; map: MapData }[] = [
+  {
+    tema: "Verb To Be",
+    nivel: "A1",
+    map: {
+      titulo: "VERB TO BE",
+      explicacao:
+        "O Verb To Be significa principalmente “ser” ou “estar” e é uma das estruturas mais importantes do inglês.",
+      secoes: [
+        {
+          titulo: "AM",
+          itens: [
+            { en: "I am", pt: "Eu sou / estou" },
+            { en: "Usado com I", pt: "Use apenas com “I”" },
+          ],
+        },
+        {
+          titulo: "IS",
+          itens: [
+            { en: "He is · She is · It is", pt: "Ele é · Ela é · Isso é" },
+            { en: "Usado com He, She e It" },
+          ],
+        },
+        {
+          titulo: "ARE",
+          itens: [
+            { en: "You are · We are · They are", pt: "Você é · Nós somos · Eles são" },
+            { en: "Usado com You, We e They" },
+          ],
+        },
+        {
+          titulo: "EXEMPLOS",
+          itens: [
+            { en: "I am happy.", pt: "Eu estou feliz." },
+            { en: "She is a doctor.", pt: "Ela é médica." },
+            { en: "They are at home.", pt: "Eles estão em casa." },
+          ],
+        },
+      ],
+      dica: "Observe o sujeito da frase para escolher entre AM, IS ou ARE.",
+    },
+  },
+  {
+    tema: "Simple Present",
+    nivel: "A1",
+    map: {
+      titulo: "SIMPLE PRESENT",
+      explicacao:
+        "Usamos o Simple Present para falar sobre hábitos, rotinas, fatos e situações recorrentes.",
+      secoes: [
+        {
+          titulo: "AFIRMATIVA",
+          itens: [
+            { en: "I work every day.", pt: "Eu trabalho todos os dias." },
+            { en: "She works at a hospital.", pt: "Ela trabalha em um hospital." },
+          ],
+        },
+        {
+          titulo: "NEGATIVA",
+          itens: [
+            { en: "I don't work on Sundays.", pt: "Eu não trabalho aos domingos." },
+            { en: "He doesn't like coffee.", pt: "Ele não gosta de café." },
+          ],
+        },
+        {
+          titulo: "PERGUNTAS",
+          itens: [
+            { en: "Do you study English?", pt: "Você estuda inglês?" },
+            { en: "Does she play tennis?", pt: "Ela joga tênis?" },
+          ],
+        },
+        {
+          titulo: "QUANDO USAR",
+          itens: [
+            { en: "Rotinas e hábitos", pt: "Ações que se repetem" },
+            { en: "Fatos e verdades", pt: "Coisas sempre verdadeiras" },
+          ],
+        },
+      ],
+      dica: "Com He, She e It, o verbo ganha “s” no final: works, plays, likes.",
+    },
+  },
+  {
+    tema: "Phrasal Verbs",
+    nivel: "B1",
+    map: {
+      titulo: "PHRASAL VERBS",
+      explicacao:
+        "Phrasal Verbs são combinações de verbos com preposições ou advérbios que formam novos significados.",
+      secoes: [
+        {
+          titulo: "ROTINA",
+          itens: [
+            { en: "WAKE UP", pt: "Acordar" },
+            { en: "GET UP", pt: "Levantar-se" },
+            { en: "GO OUT", pt: "Sair" },
+          ],
+        },
+        {
+          titulo: "AÇÕES",
+          itens: [
+            { en: "TURN ON", pt: "Ligar" },
+            { en: "TURN OFF", pt: "Desligar" },
+            { en: "PUT ON", pt: "Vestir / Colocar" },
+          ],
+        },
+        {
+          titulo: "PENSAR E DESCOBRIR",
+          itens: [
+            { en: "FIND OUT", pt: "Descobrir" },
+            { en: "LOOK FOR", pt: "Procurar" },
+            { en: "GIVE UP", pt: "Desistir" },
+          ],
+        },
+        {
+          titulo: "EXEMPLO",
+          itens: [
+            { en: "I wake up at 7 a.m.", pt: "Eu acordo às 7h." },
+            { en: "Turn on the TV, please.", pt: "Ligue a TV, por favor." },
+          ],
+        },
+      ],
+      dica: "Aprenda o phrasal verb com o significado em português — não traduza palavra por palavra.",
+    },
+  },
+  {
+    tema: "Prepositions",
+    nivel: "A2",
+    map: {
+      titulo: "PREPOSITIONS",
+      explicacao:
+        "Preposições ligam palavras e indicam tempo, lugar e direção. As mais usadas são IN, ON e AT.",
+      secoes: [
+        {
+          titulo: "IN — TEMPO E LUGAR",
+          itens: [
+            { en: "in the morning", pt: "de manhã" },
+            { en: "in Brazil", pt: "no Brasil" },
+            { en: "in 2026", pt: "em 2026" },
+          ],
+        },
+        {
+          titulo: "ON — DIAS E SUPERFÍCIES",
+          itens: [
+            { en: "on Monday", pt: "na segunda-feira" },
+            { en: "on the table", pt: "sobre a mesa" },
+          ],
+        },
+        {
+          titulo: "AT — HORAS E PONTOS",
+          itens: [
+            { en: "at 8 o'clock", pt: "às 8 horas" },
+            { en: "at home", pt: "em casa" },
+            { en: "at the door", pt: "na porta" },
+          ],
+        },
+        {
+          titulo: "ERROS COMUNS",
+          itens: [
+            { en: "on the weekend", pt: "não “in the weekend”" },
+            { en: "at night", pt: "não “in night”" },
+          ],
+        },
+      ],
+      dica: "Pense assim: IN para períodos maiores, ON para dias, AT para horários exatos.",
+    },
+  },
+  {
+    tema: "Travel English",
+    nivel: "A2",
+    map: {
+      titulo: "TRAVEL ENGLISH",
+      explicacao:
+        "Frases essenciais em inglês para situações reais de viagem: aeroporto, hotel, restaurante e compras.",
+      secoes: [
+        {
+          titulo: "AEROPORTO",
+          itens: [
+            { en: "Where is the boarding gate?", pt: "Onde fica o portão de embarque?" },
+            { en: "I'd like a window seat.", pt: "Gostaria de um assento na janela." },
+          ],
+        },
+        {
+          titulo: "HOTEL",
+          itens: [
+            { en: "I have a reservation.", pt: "Eu tenho uma reserva." },
+            { en: "What time is breakfast?", pt: "A que horas é o café da manhã?" },
+          ],
+        },
+        {
+          titulo: "RESTAURANTE",
+          itens: [
+            { en: "Can I see the menu?", pt: "Posso ver o cardápio?" },
+            { en: "The check, please.", pt: "A conta, por favor." },
+          ],
+        },
+        {
+          titulo: "COMPRAS",
+          itens: [
+            { en: "How much is this?", pt: "Quanto custa isto?" },
+            { en: "Do you accept cards?", pt: "Vocês aceitam cartão?" },
+          ],
+        },
+      ],
+      dica: "Comece sempre com “Excuse me” para pedir ajuda com educação.",
+    },
+  },
+  {
+    tema: "Everyday Expressions",
+    nivel: "B1",
+    map: {
+      titulo: "EVERYDAY EXPRESSIONS",
+      explicacao:
+        "Expressões usadas no inglês real do dia a dia. Decore a expressão completa com o sentido em português.",
+      secoes: [
+        {
+          titulo: "CUMPRIMENTOS",
+          itens: [
+            { en: "What's up?", pt: "E aí? / Como vai?" },
+            { en: "Long time no see!", pt: "Quanto tempo!" },
+          ],
+        },
+        {
+          titulo: "REAÇÕES",
+          itens: [
+            { en: "No way!", pt: "Não acredito! / Sério?" },
+            { en: "That makes sense.", pt: "Isso faz sentido." },
+          ],
+        },
+        {
+          titulo: "CONVERSAS",
+          itens: [
+            { en: "Never mind.", pt: "Deixa pra lá." },
+            { en: "It depends.", pt: "Depende." },
+          ],
+        },
+        {
+          titulo: "DESPEDIDAS",
+          itens: [
+            { en: "See you around!", pt: "A gente se vê!" },
+            { en: "Take care!", pt: "Se cuida!" },
+          ],
+        },
+      ],
+      dica: "Use essas expressões em conversas para soar mais natural em inglês.",
+    },
+  },
 ];
 
 const usos = [
@@ -371,15 +606,8 @@ function Landing() {
                     key={m.tema}
                     className="group h-full overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-500 hover:-translate-y-1"
                   >
-                    <div className="overflow-hidden bg-background">
-                      <img
-                        src={m.src}
-                        alt={`Exemplo de mapa mental de inglês sobre ${m.tema}`}
-                        width={1024}
-                        height={1280}
-                        loading="lazy"
-                        className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
+                    <div className="aspect-[4/5] overflow-hidden bg-background transition-transform duration-700 group-hover:scale-[1.03]">
+                      <MapPoster map={m.map} />
                     </div>
                     <figcaption className="flex items-center justify-between gap-3 px-5 py-4">
                       <span className="font-display text-sm font-semibold text-navy">{m.tema}</span>
