@@ -606,15 +606,8 @@ function Landing() {
                     key={m.tema}
                     className="group h-full overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-500 hover:-translate-y-1"
                   >
-                    <div className="overflow-hidden bg-background">
-                      <img
-                        src={m.src}
-                        alt={`Exemplo de mapa mental de inglês sobre ${m.tema}`}
-                        width={1024}
-                        height={1280}
-                        loading="lazy"
-                        className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
+                    <div className="aspect-[4/5] overflow-hidden bg-background transition-transform duration-700 group-hover:scale-[1.03]">
+                      <MapPoster map={m.map} />
                     </div>
                     <figcaption className="flex items-center justify-between gap-3 px-5 py-4">
                       <span className="font-display text-sm font-semibold text-navy">{m.tema}</span>
