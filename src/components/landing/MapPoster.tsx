@@ -53,12 +53,12 @@ export function MapPoster({ map }: { map: MapData }) {
 
       {/* blocos */}
       <div className="mt-2 grid flex-1 grid-cols-2 gap-2">
-        <div className="space-y-2">
+        <div className="flex flex-col justify-between gap-2">
           {colA.map((s) => (
             <Block key={s.titulo} s={s} />
           ))}
         </div>
-        <div className="space-y-2">
+        <div className="flex flex-col justify-between gap-2">
           {colB.map((s) => (
             <Block key={s.titulo} s={s} />
           ))}
