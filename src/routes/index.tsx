@@ -28,12 +28,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { StickyCta } from "@/components/landing/StickyCta";
 
 import heroDevices from "@/assets/hero-devices.jpg";
-import mapToBe from "@/assets/map-tobe.jpg";
-import mapPresent from "@/assets/map-present.jpg";
-import mapPhrasal from "@/assets/map-phrasal.jpg";
-import mapTravel from "@/assets/map-travel.jpg";
-import mapPrepositions from "@/assets/map-prepositions.jpg";
-import mapExpressions from "@/assets/map-expressions.jpg";
+import { MapPoster, type MapData } from "@/components/landing/MapPoster";
 import useTablet from "@/assets/use-tablet.jpg";
 import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
