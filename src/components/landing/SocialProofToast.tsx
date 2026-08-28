@@ -68,6 +68,7 @@ export function SocialProofToast() {
   }, [mounted]);
 
   if (!mounted) return null;
+  if (PLACEHOLDER_NOTIFICATIONS.length === 0) return null;
 
   const current = PLACEHOLDER_NOTIFICATIONS[index];
 
