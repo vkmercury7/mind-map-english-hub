@@ -8,6 +8,7 @@ import {
   Layers,
   MessagesSquare,
   Plane,
+  Play,
   Repeat2,
   ShieldCheck,
   Sparkles,
@@ -27,8 +28,8 @@ import { AutoCarousel } from "@/components/landing/AutoCarousel";
 import { Reveal } from "@/components/landing/Reveal";
 import { StickyCta } from "@/components/landing/StickyCta";
 
-import heroDevices from "@/assets/hero-devices.jpg";
 import { MapPoster, type MapData } from "@/components/landing/MapPoster";
+import { VslPlaceholder } from "@/components/landing/VslPlaceholder";
 import useTablet from "@/assets/use-tablet.jpg";
 import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
