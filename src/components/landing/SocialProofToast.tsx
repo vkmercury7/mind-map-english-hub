@@ -69,7 +69,7 @@ export function SocialProofToast() {
 
   if (!mounted) return null;
 
-  const current = PLACEHOLDER_NOTIFICATIONS[index % PLACEHOLDER_NOTIFICATIONS.length];
+  const current = PLACEHOLDER_NOTIFICATIONS[index % PLACEHOLDER_NOTIFICATIONS.length]!;
 
   return (
     <div
