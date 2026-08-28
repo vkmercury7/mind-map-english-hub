@@ -27,6 +27,7 @@ import {
 import { AutoCarousel } from "@/components/landing/AutoCarousel";
 import { FeedbackCarousel } from "@/components/landing/FeedbackCarousel";
 import { Reveal } from "@/components/landing/Reveal";
+import { SocialProofToast } from "@/components/landing/SocialProofToast";
 import { StickyCta } from "@/components/landing/StickyCta";
 
 import { MapPoster, type MapData } from "@/components/landing/MapPoster";
@@ -970,6 +971,7 @@ function Landing() {
       </footer>
 
       <StickyCta />
+      <SocialProofToast />
     </div>
   );
 }
