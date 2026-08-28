@@ -4,7 +4,13 @@ import { cn } from "@/lib/utils";
 
 // PLACEHOLDERS DE DESENVOLVIMENTO — substituir por dados reais de vendas.
 // Estrutura preparada para receber: primeiro nome, produto adquirido e tempo desde a compra.
-const PLACEHOLDER_NOTIFICATIONS = [
+type Notification = {
+  firstName: string;
+  product: string;
+  timeAgo: string;
+};
+
+const PLACEHOLDER_NOTIFICATIONS: Notification[] = [
   {
     firstName: "Mariana",
     product: "Mapas Mentais de Inglês",
