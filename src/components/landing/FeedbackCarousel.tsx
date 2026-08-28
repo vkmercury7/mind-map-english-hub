@@ -69,7 +69,7 @@ export function FeedbackCarousel({ items, interval = 4500 }: FeedbackCarouselPro
             <CarouselItem
               key={i}
               className={cn(
-                "pl-4 basis-[82%] transition-all duration-500 sm:basis-[52%] lg:basis-[38%]",
+                "pl-4 basis-[82%] transition-all duration-500 sm:basis-[52%] lg:basis-[44%]",
                 i === selected ? "sm:scale-100 sm:opacity-100" : "sm:scale-[0.93] sm:opacity-70"
               )}
             >
