@@ -25,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AutoCarousel } from "@/components/landing/AutoCarousel";
+import { FeedbackCarousel } from "@/components/landing/FeedbackCarousel";
 import { Reveal } from "@/components/landing/Reveal";
 import { StickyCta } from "@/components/landing/StickyCta";
 
@@ -793,6 +794,57 @@ function Landing() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* 9.5 Feedbacks / Prova social */}
+        <section className="bg-mist py-16 sm:py-24">
+          <div className="mx-auto max-w-6xl px-4">
+            <Reveal className="mx-auto max-w-2xl text-center">
+              <SectionLabel>PROVA SOCIAL</SectionLabel>
+              <h2 className="mt-5 text-2xl font-bold text-navy sm:text-4xl">
+                Quem já começou está percebendo a diferença.
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+                Veja alguns feedbacks de quem está usando os mapas mentais para tornar o inglês
+                mais simples e visual.
+              </p>
+            </Reveal>
+
+            <Reveal className="mt-12">
+              {/*
+                Substitua os placeholders abaixo pelos prints reais:
+                troque o conteúdo de cada card por
+                <img src={print} alt="Feedback de aluno" className="h-full w-full rounded-3xl object-cover" />
+              */}
+              <FeedbackCarousel
+                items={["Feedback 01", "Feedback 02", "Feedback 03"].map((label) => (
+                  <figure key={label} className="mx-auto max-w-sm">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-border bg-gradient-navy shadow-card">
+                      <div
+                        aria-hidden
+                        className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-royal/25 blur-2xl"
+                      />
+                      <div
+                        aria-hidden
+                        className="absolute -bottom-12 -right-8 h-44 w-44 rounded-full bg-coral/20 blur-2xl"
+                      />
+                      <div className="relative flex h-full flex-col items-center justify-center gap-4 p-8 text-center">
+                        <span className="grid size-14 place-items-center rounded-2xl border border-white/15 bg-white/10">
+                          <MessagesSquare className="size-6 text-navy-foreground" />
+                        </span>
+                        <p className="font-display text-sm font-semibold tracking-[0.22em] text-navy-foreground/90">
+                          {label.toUpperCase()}
+                        </p>
+                        <p className="text-[13px] leading-relaxed text-navy-foreground/60">
+                          Espaço reservado para o print real do feedback
+                        </p>
+                      </div>
+                    </div>
+                  </figure>
+                ))}
+              />
+            </Reveal>
           </div>
         </section>
 
