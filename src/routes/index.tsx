@@ -606,7 +606,7 @@ function Landing() {
                     key={m.tema}
                     className="group h-full overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-500 hover:-translate-y-1"
                   >
-                    <div className="aspect-[4/5] overflow-hidden bg-background transition-transform duration-700 group-hover:scale-[1.03]">
+                    <div className="min-h-[460px] overflow-hidden bg-background transition-transform duration-700 group-hover:scale-[1.03] sm:aspect-[4/5] sm:min-h-0">
                       <MapPoster map={m.map} />
                     </div>
                     <figcaption className="flex items-center justify-between gap-3 px-5 py-4">
