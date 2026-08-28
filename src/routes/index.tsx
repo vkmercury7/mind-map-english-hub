@@ -8,6 +8,7 @@ import {
   Layers,
   MessagesSquare,
   Plane,
+  Play,
   Repeat2,
   ShieldCheck,
   Sparkles,
@@ -27,8 +28,8 @@ import { AutoCarousel } from "@/components/landing/AutoCarousel";
 import { Reveal } from "@/components/landing/Reveal";
 import { StickyCta } from "@/components/landing/StickyCta";
 
-import heroDevices from "@/assets/hero-devices.jpg";
 import { MapPoster, type MapData } from "@/components/landing/MapPoster";
+import { VslPlaceholder } from "@/components/landing/VslPlaceholder";
 import useTablet from "@/assets/use-tablet.jpg";
 import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
@@ -464,30 +465,34 @@ function Landing() {
         <section className="relative overflow-hidden bg-gradient-mist">
           <div className="pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full bg-royal/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-56 -left-40 size-[30rem] rounded-full bg-coral/10 blur-3xl" />
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 lg:grid-cols-[1.05fr_1fr] lg:py-24">
-            <div className="animate-rise">
+          <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-14 lg:py-24">
+            <div className="animate-rise flex w-full max-w-4xl flex-col items-center text-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-royal/25 bg-card px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-royal shadow-soft">
                 <Sparkles className="size-3.5" />
                 INGLÊS DE UM JEITO MAIS VISUAL
               </span>
 
-              <h1 className="mt-6 text-[2.1rem] font-bold leading-[1.08] text-navy sm:text-5xl lg:text-[3.4rem]">
+              <h1 className="mt-6 max-w-3xl text-[2.1rem] font-bold leading-[1.08] text-navy sm:text-5xl lg:text-[3.4rem]">
                 +400 mapas mentais para{" "}
                 <span className="bg-gradient-royal bg-clip-text text-transparent">
                   aprender e revisar inglês
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Gramática, vocabulário, expressões, phrasal verbs e conteúdos essenciais organizados
                 de forma visual para você estudar sem se perder em explicações enormes.
               </p>
 
-              <ul className="mt-7 flex flex-wrap gap-2">
+              <div className="mt-8 w-full px-0 sm:px-8 lg:px-12">
+                <VslPlaceholder />
+              </div>
+
+              <ul className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {heroPills.map((p) => (
                   <li
                     key={p}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 text-[13px] font-medium text-navy shadow-soft"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-3.5 py-2.5 text-[13px] font-medium text-navy shadow-soft"
                   >
                     <Check className="size-3.5 text-coral" />
                     {p}
@@ -506,18 +511,6 @@ function Landing() {
                   Acesso digital • Liberação após a compra
                 </p>
               </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-x-6 top-8 h-full rounded-[2.5rem] bg-royal/10 blur-2xl" />
-              <img
-                src={heroDevices}
-                alt="Mapas mentais de inglês abertos em notebook, tablet e celular"
-                width={1408}
-                height={1104}
-                fetchPriority="high"
-                className="relative w-full rounded-3xl"
-              />
             </div>
           </div>
         </section>
