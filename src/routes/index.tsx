@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   Compass,
   Layers,
+  Lock,
   MessagesSquare,
   Plane,
   Play,
@@ -26,6 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import { AutoCarousel } from "@/components/landing/AutoCarousel";
 import { FeedbackCarousel } from "@/components/landing/FeedbackCarousel";
+import { KitMockup } from "@/components/landing/KitMockup";
 import { Reveal } from "@/components/landing/Reveal";
 import { SocialProofToast } from "@/components/landing/SocialProofToast";
 import { StickyCta } from "@/components/landing/StickyCta";
