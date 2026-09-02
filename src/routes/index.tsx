@@ -891,7 +891,7 @@ function Landing() {
                 </p>
 
                 <div className="mt-8">
-                  <KitMockup map={mapas[0].map} />
+                  <KitMockup map={mapas[0]!.map} />
                 </div>
 
                 <p className="mt-10 text-center text-[13px] font-bold tracking-[0.18em] text-royal">
