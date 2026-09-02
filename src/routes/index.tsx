@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   Compass,
   Layers,
+  Lock,
   MessagesSquare,
   Plane,
   Play,
@@ -26,6 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import { AutoCarousel } from "@/components/landing/AutoCarousel";
 import { FeedbackCarousel } from "@/components/landing/FeedbackCarousel";
+import { KitMockup } from "@/components/landing/KitMockup";
 import { Reveal } from "@/components/landing/Reveal";
 import { SocialProofToast } from "@/components/landing/SocialProofToast";
 import { StickyCta } from "@/components/landing/StickyCta";
@@ -42,6 +44,33 @@ import useWall from "@/assets/use-wall.jpg";
 const PRAZO_GARANTIA = "7 dias";
 /** Link do checkout. */
 const CHECKOUT_URL = "#oferta";
+
+/** Materiais incluídos na oferta (card final de compra). */
+const ofertaItens: { titulo: string; descricao: string }[] = [
+  {
+    titulo: "+400 Mapas Mentais de Inglês",
+    descricao:
+      "Material visual para aprender e revisar os principais conteúdos de inglês de maneira muito mais organizada.",
+  },
+  {
+    titulo: "BÔNUS #1 — 500 Frases Mais Usadas em Inglês",
+    descricao: "Frases úteis para situações e conversas do cotidiano.",
+  },
+  {
+    titulo: "BÔNUS #2 — Plano / Rota de Estudos",
+    descricao:
+      "Material para ajudar o aluno a organizar o que estudar e manter uma sequência de aprendizado.",
+  },
+  {
+    titulo: "BÔNUS #3 — 100 Phrasal Verbs Essenciais",
+    descricao: "Uma seleção dos principais phrasal verbs para aprender e consultar.",
+  },
+  {
+    titulo: "BÔNUS #4 — 150 Expressões e Gírias em Inglês",
+    descricao:
+      "Expressões utilizadas no inglês cotidiano para ampliar o vocabulário e a compreensão.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -853,39 +882,78 @@ function Landing() {
         <section id="oferta" className="bg-gradient-navy py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
-              <div className="rounded-[2rem] bg-card p-8 shadow-float sm:p-12">
+              <div className="rounded-[2rem] bg-card p-6 shadow-float sm:p-12">
                 <h2 className="text-center text-2xl font-bold leading-tight text-navy sm:text-3xl">
                   Comece agora a estudar inglês de forma mais visual.
                 </h2>
+                <p className="mt-3 text-center text-[15px] leading-relaxed text-muted-foreground">
+                  Tenha acesso imediato ao material completo + todos os bônus.
+                </p>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-                  <div className="rounded-2xl bg-mist p-5 text-center">
-                    <p className="font-display text-xl font-bold text-navy">+400</p>
-                    <p className="mt-1 text-[13px] text-muted-foreground">Mapas mentais</p>
-                  </div>
-                  <span className="text-center font-display text-lg text-muted-foreground">+</span>
-                  <div className="rounded-2xl bg-mist p-5 text-center">
-                    <p className="font-display text-xl font-bold text-navy">4</p>
-                    <p className="mt-1 text-[13px] text-muted-foreground">Bônus inclusos</p>
-                  </div>
+                <div className="mt-8">
+                  <KitMockup map={mapas[0]!.map} />
                 </div>
 
-                <div className="mt-10 text-center">
+                <p className="mt-10 text-center text-[13px] font-bold tracking-[0.18em] text-royal">
+                  TUDO O QUE VOCÊ RECEBE HOJE:
+                </p>
+                <ul className="mt-5 space-y-3">
+                  {ofertaItens.map((item) => (
+                    <li
+                      key={item.titulo}
+                      className="flex items-start gap-3 rounded-2xl bg-mist p-4"
+                    >
+                      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-royal text-primary-foreground">
+                        <Check className="size-3.5" strokeWidth={3} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-[15px] font-bold leading-snug text-navy">
+                          {item.titulo}
+                        </p>
+                        <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
+                          {item.descricao}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 border-t border-border pt-8 text-center">
                   <p className="text-[13px] font-semibold tracking-[0.16em] text-muted-foreground">
+                    PACOTE COMPLETO
+                  </p>
+                  <p className="mt-4 text-[13px] font-semibold tracking-[0.16em] text-muted-foreground">
                     HOJE POR
                   </p>
                   <p className="mt-2 font-display text-5xl font-bold text-navy sm:text-6xl">
                     R$ 19,90
                   </p>
-                  <p className="mt-2 text-sm text-muted-foreground">Pagamento único</p>
+                  <p className="mt-2 text-sm font-medium text-navy">Pagamento único</p>
+                  <p className="mt-1 text-[13px] text-muted-foreground">
+                    Sem mensalidade • Acesso digital
+                  </p>
                 </div>
 
-                <Button asChild variant="cta" size="hero" className="mt-8 w-full">
+                <Button asChild variant="cta" size="hero" className="mt-8 w-full shadow-cta">
                   <a href={CHECKOUT_URL}>QUERO ACESSAR AGORA</a>
                 </Button>
-                <p className="mt-4 text-center text-[13px] text-muted-foreground">
-                  Compra segura • Acesso digital
+                <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-[13px] text-muted-foreground">
+                  <Lock className="size-3.5 shrink-0" />
+                  Compra segura • Acesso digital imediato
                 </p>
+
+                <div className="mt-6 flex items-center justify-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-center sm:text-left">
+                  <ShieldCheck className="size-6 shrink-0 text-royal" />
+                  <div>
+                    <p className="text-[13px] font-bold tracking-wide text-navy">
+                      7 DIAS DE GARANTIA
+                    </p>
+                    <p className="mt-0.5 text-[12px] leading-snug text-muted-foreground">
+                      Você pode acessar o material e conhecer o conteúdo. Sua compra está protegida
+                      pela garantia de 7 dias.
+                    </p>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
