@@ -45,6 +45,33 @@ const PRAZO_GARANTIA = "7 dias";
 /** Link do checkout. */
 const CHECKOUT_URL = "#oferta";
 
+/** Materiais incluídos na oferta (card final de compra). */
+const ofertaItens: { titulo: string; descricao: string }[] = [
+  {
+    titulo: "+400 Mapas Mentais de Inglês",
+    descricao:
+      "Material visual para aprender e revisar os principais conteúdos de inglês de maneira muito mais organizada.",
+  },
+  {
+    titulo: "BÔNUS #1 — 500 Frases Mais Usadas em Inglês",
+    descricao: "Frases úteis para situações e conversas do cotidiano.",
+  },
+  {
+    titulo: "BÔNUS #2 — Plano / Rota de Estudos",
+    descricao:
+      "Material para ajudar o aluno a organizar o que estudar e manter uma sequência de aprendizado.",
+  },
+  {
+    titulo: "BÔNUS #3 — 100 Phrasal Verbs Essenciais",
+    descricao: "Uma seleção dos principais phrasal verbs para aprender e consultar.",
+  },
+  {
+    titulo: "BÔNUS #4 — 150 Expressões e Gírias em Inglês",
+    descricao:
+      "Expressões utilizadas no inglês cotidiano para ampliar o vocabulário e a compreensão.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
