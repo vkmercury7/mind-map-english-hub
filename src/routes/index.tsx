@@ -480,7 +480,7 @@ function Landing() {
         <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 sm:justify-between">
           <a href="#top" className="flex items-center">
             <img
-              src={logoAsset.url}
+              src="/images/logo-fluente-no-brasil.png"
               alt="Fluente no Brasil"
               className="h-8 w-auto max-w-[70vw] object-contain sm:h-9"
               width={856}
