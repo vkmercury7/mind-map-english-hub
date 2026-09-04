@@ -39,7 +39,6 @@ import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
 import useCafe from "@/assets/use-cafe.jpg";
 import useWall from "@/assets/use-wall.jpg";
-import logoAsset from "@/assets/logo-fluente-no-brasil.png.asset.json";
 
 /** Edite aqui o prazo de garantia conforme a plataforma de checkout. */
 const PRAZO_GARANTIA = "7 dias";
