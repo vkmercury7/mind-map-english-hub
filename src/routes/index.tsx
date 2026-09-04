@@ -849,32 +849,27 @@ function Landing() {
                 <img src={print} alt="Feedback de aluno" className="h-full w-full rounded-3xl object-cover" />
               */}
               <FeedbackCarousel
-                items={["Feedback 01", "Feedback 02", "Feedback 03"].map((label) => (
-                  <figure key={label} className="mx-auto max-w-sm">
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-border bg-gradient-navy shadow-card">
-                      <div
-                        aria-hidden
-                        className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-royal/25 blur-2xl"
+                items={[
+                  { src: "/images/feedback-01.jpg", alt: "Feedback de aluno enviado por mensagem" },
+                  { src: "/images/feedback-02.jpg", alt: "Feedback de aluna enviado por mensagem" },
+                  { src: "/images/feedback-03.jpg", alt: "Feedback de aluna sobre os mapas mentais" },
+                ].map((f) => (
+                  <figure key={f.src} className="mx-auto max-w-sm">
+                    <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
+                      <img
+                        src={f.src}
+                        alt={f.alt}
+                        width={800}
+                        height={1729}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-auto w-full object-contain"
                       />
-                      <div
-                        aria-hidden
-                        className="absolute -bottom-12 -right-8 h-44 w-44 rounded-full bg-coral/20 blur-2xl"
-                      />
-                      <div className="relative flex h-full flex-col items-center justify-center gap-4 p-8 text-center">
-                        <span className="grid size-14 place-items-center rounded-2xl border border-white/15 bg-white/10">
-                          <MessagesSquare className="size-6 text-navy-foreground" />
-                        </span>
-                        <p className="font-display text-sm font-semibold tracking-[0.22em] text-navy-foreground/90">
-                          {label.toUpperCase()}
-                        </p>
-                        <p className="text-[13px] leading-relaxed text-navy-foreground/60">
-                          Espaço reservado para o print real do feedback
-                        </p>
-                      </div>
                     </div>
                   </figure>
                 ))}
               />
+
             </Reveal>
           </div>
         </section>
