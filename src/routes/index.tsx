@@ -39,11 +39,12 @@ import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
 import useCafe from "@/assets/use-cafe.jpg";
 import useWall from "@/assets/use-wall.jpg";
+import logoAsset from "@/assets/logo-fluente-no-brasil.png.asset.json";
 
 /** Edite aqui o prazo de garantia conforme a plataforma de checkout. */
 const PRAZO_GARANTIA = "7 dias";
 /** Link do checkout. */
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://hub.usepinpay.com/pay/5179eed9-5ec5-4fb9-a483-659fe4c042a3";
 
 /** Materiais incluídos na oferta (card final de compra). */
 const ofertaItens: { titulo: string; descricao: string }[] = [
@@ -476,17 +477,18 @@ function Landing() {
 
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <a href="#top" className="flex items-center gap-2">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-gradient-royal text-primary-foreground">
-              <Layers className="size-4" />
-            </span>
-            <span className="font-display text-sm font-semibold tracking-tight text-navy">
-              Mapas de Inglês
-            </span>
+        <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4 sm:justify-between">
+          <a href="#top" className="flex items-center">
+            <img
+              src={logoAsset.url}
+              alt="Fluente no Brasil"
+              className="h-8 w-auto max-w-[70vw] object-contain sm:h-9"
+              width={856}
+              height={286}
+            />
           </a>
           <Button asChild variant="cta" className="hidden h-11 rounded-xl px-6 sm:inline-flex">
-            <a href="#oferta">QUERO ACESSAR</a>
+            <a href={CHECKOUT_URL}>QUERO ACESSAR</a>
           </Button>
         </div>
       </header>

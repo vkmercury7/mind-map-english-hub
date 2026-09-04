@@ -20,7 +20,7 @@ export function StickyCta() {
       )}
     >
       <Button asChild variant="cta" size="xl" className="w-full">
-        <a href="#oferta">QUERO OS +400 MAPAS</a>
+        <a href="https://hub.usepinpay.com/pay/5179eed9-5ec5-4fb9-a483-659fe4c042a3">QUERO OS +400 MAPAS</a>
       </Button>
     </div>
   );
