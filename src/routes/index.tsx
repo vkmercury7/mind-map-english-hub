@@ -44,6 +44,8 @@ import useWall from "@/assets/use-wall.jpg";
 const PRAZO_GARANTIA = "7 dias";
 /** Link do checkout. */
 const CHECKOUT_URL = "https://hub.usepinpay.com/pay/5179eed9-5ec5-4fb9-a483-659fe4c042a3";
+// CTAs intermediários levam para a seção do plano; só o botão do card do plano vai ao checkout.
+const PLANO_ANCHOR = "#oferta";
 
 /** Materiais incluídos na oferta (card final de compra). */
 const ofertaItens: { titulo: string; descricao: string }[] = [
@@ -487,7 +489,7 @@ function Landing() {
             />
           </a>
           <Button asChild variant="cta" className="hidden h-11 rounded-xl px-6 sm:inline-flex">
-            <a href={CHECKOUT_URL}>QUERO ACESSAR</a>
+            <a href={PLANO_ANCHOR}>QUERO ACESSAR</a>
           </Button>
         </div>
       </header>
@@ -650,7 +652,7 @@ function Landing() {
                 São mais de 400 mapas organizados em diferentes temas e níveis.
               </p>
               <Button asChild variant="cta" size="hero" className="mt-6 sm:w-auto">
-                <a href={CHECKOUT_URL}>QUERO TER ACESSO COMPLETO</a>
+                <a href={PLANO_ANCHOR}>QUERO TER ACESSO COMPLETO</a>
               </Button>
             </Reveal>
           </div>
@@ -875,7 +877,7 @@ function Landing() {
         </section>
 
         {/* 10. Oferta */}
-        <section id="oferta" className="bg-gradient-navy py-16 sm:py-24">
+        <section id="oferta" className="scroll-mt-24 bg-gradient-navy py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
               <div className="rounded-[2rem] bg-card p-6 shadow-float sm:p-12">
@@ -1018,7 +1020,7 @@ function Landing() {
               </h2>
               <p className="mt-4 text-lg text-navy-foreground/70">Abra. Aprenda. Revise.</p>
               <Button asChild variant="ctaLight" size="hero" className="mt-9">
-                <a href={CHECKOUT_URL}>
+                <a href={PLANO_ANCHOR}>
                   QUERO COMEÇAR AGORA
                   <ArrowRight className="size-5" />
                 </a>
