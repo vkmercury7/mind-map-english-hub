@@ -39,11 +39,12 @@ import usePhone from "@/assets/use-phone.jpg";
 import usePrint from "@/assets/use-print.jpg";
 import useCafe from "@/assets/use-cafe.jpg";
 import useWall from "@/assets/use-wall.jpg";
+import logoAsset from "@/assets/logo-fluente-no-brasil.png.asset.json";
 
 /** Edite aqui o prazo de garantia conforme a plataforma de checkout. */
 const PRAZO_GARANTIA = "7 dias";
 /** Link do checkout. */
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://hub.usepinpay.com/pay/5179eed9-5ec5-4fb9-a483-659fe4c042a3";
 
 /** Materiais incluídos na oferta (card final de compra). */
 const ofertaItens: { titulo: string; descricao: string }[] = [
