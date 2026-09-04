@@ -536,7 +536,7 @@ function Landing() {
 
               <div className="mt-9">
                 <Button asChild variant="cta" size="hero">
-                  <a href={CHECKOUT_URL}>
+                  <a href={PLANO_ANCHOR}>
                     QUERO ACESSAR OS MAPAS
                     <ArrowRight className="size-5" />
                   </a>
