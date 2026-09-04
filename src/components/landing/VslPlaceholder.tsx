@@ -1,28 +1,58 @@
 import { Play } from "lucide-react";
+import { useRef, useState } from "react";
+import vslVideo from "@/assets/vsl.mp4.asset.json";
 
 /**
- * Placeholder para VSL (Video Sales Letter).
+ * Player da VSL.
  *
- * Substitua este componente pelo player de vídeo real quando o arquivo
- * estiver disponível. A estrutura externa (aspect-ratio, bordas, sombra,
- * largura responsiva) deve ser preservada para não quebrar o layout do Hero.
+ * O vídeo é quadrado (1440x1440 → 1:1) e a proporção original é preservada
+ * via aspect-square + object-contain. Para trocar o vídeo, basta substituir
+ * o asset importado acima e ajustar a classe de proporção, se necessário.
  */
 export function VslPlaceholder() {
-  return (
-    <div className="group relative w-full max-w-4xl overflow-hidden rounded-3xl bg-gradient-navy shadow-float">
-      {/* Efeito sutil de brilho */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,oklch(0.52_0.19_264/0.25),transparent_60%)]" />
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
-      {/* Container 16:9 */}
-      <div className="relative aspect-video w-full">
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-          <span className="inline-flex size-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-            <Play className="size-7 fill-white text-white" />
-          </span>
-          <span className="text-[11px] font-semibold tracking-[0.18em] text-white/70">
-            VÍDEO DE APRESENTAÇÃO
-          </span>
-        </div>
+  const toggle = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play();
+    } else {
+      el.pause();
+    }
+  };
+
+  return (
+    <div className="group relative w-full max-w-xl overflow-hidden rounded-3xl bg-gradient-navy shadow-float">
+      <div className="relative aspect-square w-full">
+        <video
+          ref={videoRef}
+          src={vslVideo.url}
+          className="absolute inset-0 size-full object-contain"
+          playsInline
+          preload="metadata"
+          controls={playing}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onClick={toggle}
+        />
+
+        {!playing && (
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label="Reproduzir vídeo de apresentação"
+            className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-navy/25"
+          >
+            <span className="inline-flex size-16 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+              <Play className="size-7 fill-white text-white" />
+            </span>
+            <span className="text-[11px] font-semibold tracking-[0.18em] text-white/70">
+              VÍDEO DE APRESENTAÇÃO
+            </span>
+          </button>
+        )}
       </div>
     </div>
   );
