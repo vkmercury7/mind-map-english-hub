@@ -1,13 +1,12 @@
 import { Play } from "lucide-react";
 import { useRef, useState } from "react";
-import vslVideo from "@/assets/vsl.mp4.asset.json";
 
 /**
  * Player da VSL.
  *
  * O vídeo é quadrado (1440x1440 → 1:1) e a proporção original é preservada
  * via aspect-square + object-contain. Para trocar o vídeo, basta substituir
- * o asset importado acima e ajustar a classe de proporção, se necessário.
+ * o arquivo em public/videos/vsl-ingles.mp4 e ajustar a classe de proporção, se necessário.
  */
 export function VslPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -28,7 +27,7 @@ export function VslPlaceholder() {
       <div className="relative aspect-square w-full">
         <video
           ref={videoRef}
-          src={vslVideo.url}
+          src="/videos/vsl-ingles.mp4"
           className="absolute inset-0 size-full object-contain"
           playsInline
           preload="metadata"
